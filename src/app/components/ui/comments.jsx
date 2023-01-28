@@ -38,8 +38,8 @@ const Comments = () => {
         dispatch(createComment(data, currentUserId, userId));
     };
     const handleRemoveComment = (id) => {
-        // removeComment(id);
         dispatch(removeComment(id));
+        dispatch(loadCommentsList(userId));
     };
     const sortedComments = orderBy(comments, ["created_at"], ["desc"]);
     return (
